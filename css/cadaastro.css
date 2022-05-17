@@ -1,86 +1,108 @@
-body{
+*{
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(120deg, #68A7AD, #EFD345);
-  height: 100vh;
-  overflow: hidden;
-  text-align: center;
-}
-.marca{
-  font-size: 30px;
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-}
-.center{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  background: white;
-  border-radius: 10px;
-}
-
-.heding{
-   font-weight: bold;
-   font-size: 40px;
-   text-align: center;
-   padding: 20px;
-   border-bottom: 1px solid silver;
-}
-
-.center form{
-  padding: 0 40px;
   box-sizing: border-box;
 }
 
-form .txt_field{
-     position: relative;
-     border-bottom: 2px solid #adadad;
-     margin: 30px 0;
+body, input{
+  font-family: 'Poppins', sans-serif;
 }
-
-.txt_field input{
+img.imagem{
+  margin-top: 10px;
+  padding: 0;
+  height: 30px;
+  text-align: center;
+  line-height: 55px;
+}
+.container{
+  position: relative;
   width: 100%;
-  padding: 0 5px;
-  height: 40px;
-  font-size: 1rem;
-  border: none;
-  background: none;
-  outline: none;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
 }
-
-.txt_field label{
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  color: #adadad;
-  transform: translateY(-50%);
-  font-size: 16px;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.txt_field span::before{
+.container::before{
   content: '';
   position: absolute;
-  top: 40px;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #066163, #B4ECE3);
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+}
+.form-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
   left: 0;
-  width: 0%;
-  height: 2px;
-  background: #B20600;
+}
+.singin-singup{
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+form.sing-in-form{
+  z-index: 2;
+}
+form.sing-up-form{
+  z-index: 1;
+  opacity: 0;
+}
+.title{
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+.input-field{
+  max-width: 380px;
+  width: 100%;
+  height: 55px;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 .4rem;
+}
+.input-field input{
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+}
+.btn{
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  border-radius: 48px;
+  background-color: #14C38E;
+  color: #fff;
   transition: .5s;
 }
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label{
-   top:-5px;
-   color: #B20600;
-}
-.txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before{
-      width: 100%;
-}
-.butun{
-  padding:30px
-}
+.btn:hover{
+  background-color: #36AE7C;
